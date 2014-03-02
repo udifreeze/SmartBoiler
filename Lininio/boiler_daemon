@@ -1,0 +1,11 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+start() 
+{
+        sleep 5   # make sure boot process is done, no more console msgs
+        echo "starting boiler..."
+        . /etc/profile
+        echo $PATH
+        python /boiler/boiler.py &
+}
